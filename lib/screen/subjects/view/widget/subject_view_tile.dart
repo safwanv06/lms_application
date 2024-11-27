@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_project/main.dart';
 import 'package:lms_project/model/subject_model.dart';
+import 'package:lms_project/utils/navigation_animation/navigation_animation.dart';
 
 import '../../../../utils/custom_image/custom_image.dart';
 import '../../../modules/view/modules_listing_view.dart';
@@ -15,13 +16,11 @@ class SubjectViewTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ModulesListingView(
-                  subjectId: subject.id,
-                  title: subject.subject,
-                ),
+          navigateWithAnimation(
+             context:  context,
+              targetPage: ModulesListingView(
+                subjectId: subject.id,
+                title: subject.subject,
               ));
         },
         child: Container(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lms_project/model/modules_model.dart';
 import 'package:lms_project/screen/video/view/video_listing_view.dart';
+import 'package:lms_project/utils/navigation_animation/navigation_animation.dart';
 import '../../../../main.dart';
 
 class ModuleViewTile extends StatelessWidget {
@@ -13,13 +14,11 @@ class ModuleViewTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => VideoListingView(
-                  moduleId: module.id,
-                  title: module.title,
-                ),
+          navigateWithAnimation(
+              context: context,
+              targetPage: VideoListingView(
+                moduleId: module.id,
+                title: module.title,
               ));
         },
         child: Container(

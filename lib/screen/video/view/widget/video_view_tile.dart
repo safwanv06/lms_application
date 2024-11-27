@@ -4,6 +4,7 @@ import 'package:lms_project/model/video_model.dart';
 import 'package:lms_project/screen/video_player/screen/video_player_view.dart';
 
 import '../../../../main.dart';
+import '../../../../utils/navigation_animation/navigation_animation.dart';
 
 class VideoViewTile extends StatelessWidget {
   const VideoViewTile({super.key, required this.videoData});
@@ -14,11 +15,7 @@ class VideoViewTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => VideoPlayerView(videoData: videoData),
-              ));
+          navigateWithAnimation(context: context,targetPage: VideoPlayerView(videoData: videoData));
         },
         child: Container(
           margin: EdgeInsets.all(appSizeConstants.padding_8.sp),
