@@ -22,7 +22,4 @@ class AppSizeConstants {
   double size66 = 66;
   double size90 = 90;
 
-  ///icon Size
-  double iconSize_12 = 12.sp;
-  double iconSize_32 = 22.sp;
 }
